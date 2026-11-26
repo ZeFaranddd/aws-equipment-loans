@@ -1,0 +1,11 @@
+== port check
+PORT 3306 OPEN
+== mysql
+VERSION()
+8.4.13
+Database
+equipmentdb
+information_schema
+mysql
+performance_schema
+sys
