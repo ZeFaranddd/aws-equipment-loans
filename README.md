@@ -21,9 +21,9 @@ File sumber diagram: `docs/architecture.drawio`. Design brief: `docs/design-brie
 | Komponen | Spesifikasi | Fungsi |
 | -------- | ----------- | ------ |
 | EC2 `equipment-api-vm` | t3.micro, Amazon Linux 2023, EBS gp2 8 GB | Menjalankan API Flask + gunicorn (port 8000) sebagai service systemd |
-| RDS `equipment-db` | MySQL 8.0, db.t3.micro, gp2 20 GB, Single-AZ, tidak publik | Menyimpan tabel `equipment` |
-| Security Group `sg-web` | SSH 22 (IP saya), TCP 8000 (uji) | Melindungi EC2 |
-| Security Group `sg-db` | MySQL 3306 hanya dari `sg-web` | Melindungi RDS |
+| RDS `equipment-db` | MySQL 8.4, db.t3.micro, gp2 20 GB, Single-AZ, tidak publik | Menyimpan tabel `equipment` |
+| Security Group `web-sg` | SSH 22 (IP saya), TCP 8000 (uji) | Melindungi EC2 |
+| Security Group `db-sg` | MySQL 3306 hanya dari `web-sg` | Melindungi RDS |
 | IAM `LabInstanceProfile` | berisi LabRole | Akses Session Manager; tanpa access key di kode |
 
 ## Entitas
@@ -47,7 +47,7 @@ Aplikasi membaca `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` dari 
 
 ## Cara deploy ke AWS
 
-Lihat [deploy/DEPLOYMENT.md](deploy/DEPLOYMENT.md). Ringkasnya: buat `sg-web` dan `sg-db`, RDS MySQL, EC2, lalu di EC2 (setelah `git clone` ke `/opt/equipment-api`) jalankan:
+Lihat [deploy/DEPLOYMENT.md](deploy/DEPLOYMENT.md). Ringkasnya: buat `web-sg` dan `db-sg`, RDS MySQL, EC2, lalu di EC2 (setelah `git clone` ke `/opt/equipment-api`) jalankan:
 
 ```bash
 DB_HOST=<endpoint-rds> DB_PASSWORD='<password>' bash deploy/ec2-setup.sh

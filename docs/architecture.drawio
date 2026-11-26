@@ -1,94 +1,88 @@
 <mxfile host="app.diagrams.net" agent="Claude">
-  <diagram id="equipment-loans-track-a" name="Architecture - Track A Cloud VM">
-    <mxGraphModel dx="1700" dy="950" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="950" math="0" shadow="0">
+  <diagram id="equipment-loans-track-b" name="Architecture - Track B Containers">
+    <mxGraphModel dx="2756" dy="888" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="n3" value="&lt;b&gt;Arsitektur Cloud VM: Equipment Loans API (Track A)&lt;/b&gt;&lt;br&gt;EC2 + RDS MySQL | AWS Academy Sandbox | Region us-east-1" style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=18;fontColor=#000000;spacingLeft=2;" vertex="1" parent="1">
-          <mxGeometry x="0" y="12" width="1700" height="60" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-61" parent="1" style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=18;fontColor=#000000;spacingLeft=2;" value="&lt;b&gt;Arsitektur Cloud VM: Equipment Loans API (Track A)&lt;/b&gt;&lt;br&gt;EC2 + RDS MySQL | AWS Academy Sandbox | Region us-east-1" vertex="1">
+          <mxGeometry height="60" width="1700" x="1290" y="870.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n4" value="&lt;b&gt;User / Client&lt;/b&gt;&lt;br&gt;Browser, curl, Postman&lt;br&gt;(juga laptop admin)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="30" y="290" width="170" height="130" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;" value="&lt;b&gt;User / Client&lt;/b&gt;&lt;br&gt;Browser, curl, Postman&lt;br&gt;(juga laptop admin)" vertex="1">
+          <mxGeometry height="130" width="170" x="1320" y="1148.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n5" value="&lt;b&gt;GitHub&lt;/b&gt;&lt;br&gt;ZeFaranddd/&lt;br&gt;aws-equipment-loans" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="30" y="550" width="170" height="90" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-63" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;" value="&lt;b&gt;GitHub&lt;/b&gt;&lt;br&gt;ZeFaranddd/&lt;br&gt;aws-equipment-loans" vertex="1">
+          <mxGeometry height="90" width="170" x="1320" y="1408.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n6" value="&lt;b&gt;AWS Cloud&lt;/b&gt; | Region us-east-1 (N. Virginia) | AWS Academy Sandbox" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#232F3E;strokeWidth=2;fontColor=#000000;fontSize=13;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
-          <mxGeometry x="270" y="90" width="1400" height="800" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-64" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#232F3E;strokeWidth=2;fontColor=#000000;fontSize=13;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;" value="&lt;b&gt;AWS Cloud&lt;/b&gt; | Region us-east-1 (N. Virginia) | AWS Academy Sandbox" vertex="1">
+          <mxGeometry height="800" width="1400" x="1560" y="948.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n7" value="&lt;b&gt;Default VPC&lt;/b&gt; | 172.31.0.0/16" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#248814;strokeWidth=2;fontColor=#000000;fontSize=13;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
-          <mxGeometry x="310" y="150" width="1320" height="700" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-65" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#248814;strokeWidth=2;fontColor=#000000;fontSize=13;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;dashed=1;dashPattern=8 4;" value="&lt;b&gt;Default VPC&lt;/b&gt; | 172.31.0.0/16" vertex="1">
+          <mxGeometry height="700" width="1320" x="1600" y="1008.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n8" value="&lt;b&gt;Public subnet&lt;/b&gt; | Availability Zone a (auto-assign public IP)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#248814;strokeWidth=2;fontColor=#000000;fontSize=13;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;dashed=1;dashPattern=2 4;" vertex="1" parent="1">
-          <mxGeometry x="335" y="200" width="600" height="620" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-66" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#248814;strokeWidth=2;fontColor=#000000;fontSize=13;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;dashed=1;dashPattern=2 4;" value="&lt;b&gt;Public subnet&lt;/b&gt; | Availability Zone a (auto-assign public IP)" vertex="1">
+          <mxGeometry height="620" width="600" x="1625" y="1058.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n9" value="&lt;b&gt;Security Group sg-web&lt;/b&gt;: SSH 22 (hanya IP saya), TCP 8000 (Anywhere, untuk uji)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#DD344C;strokeWidth=2;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;dashed=1;dashPattern=8 3 2 3;" vertex="1" parent="1">
-          <mxGeometry x="350" y="245" width="570" height="405" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-67" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#DD344C;strokeWidth=2;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;dashed=1;dashPattern=8 3 2 3;" value="&lt;b&gt;Security Group web-sg&lt;/b&gt;: SSH 22 (hanya IP saya), TCP 8000 (Anywhere, untuk uji)" vertex="1">
+          <mxGeometry height="405" width="570" x="1640" y="1103.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n10" value="&lt;b&gt;EC2: equipment-api-vm&lt;/b&gt;&lt;br&gt;t3.micro | Amazon Linux 2023 | EBS gp2 8 GB" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF4E5;strokeColor=#D86613;strokeWidth=3;fontColor=#000000;fontSize=13;align=center;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="375" y="310" width="520" height="310" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-68" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF4E5;strokeColor=#D86613;strokeWidth=3;fontColor=#000000;fontSize=13;align=center;verticalAlign=top;" value="&lt;b&gt;EC2: equipment-api-vm&lt;/b&gt;&lt;br&gt;t3.micro | Amazon Linux 2023 | EBS gp2 8 GB" vertex="1">
+          <mxGeometry height="310" width="520" x="1665" y="1168.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n11" value="&lt;b&gt;Aplikasi Flask + gunicorn :8000&lt;/b&gt;&lt;br&gt;service systemd: equipment-api&lt;br&gt;POST/GET/PUT/DELETE /equipment, GET /health&lt;br&gt;koneksi DB lewat PyMySQL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="400" y="385" width="470" height="130" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-69" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;" value="&lt;b&gt;Aplikasi Flask + gunicorn :8000&lt;/b&gt;&lt;br&gt;service systemd: equipment-api&lt;br&gt;POST/GET/PUT/DELETE /equipment, GET /health&lt;br&gt;koneksi DB lewat PyMySQL" vertex="1">
+          <mxGeometry height="130" width="470" x="1690" y="1243.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n12" value="Kredensial DB di /etc/equipment-api.env&lt;br&gt;(chmod 600, tidak masuk Git)" style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=12;fontColor=#000000;spacingLeft=2;" vertex="1" parent="1">
-          <mxGeometry x="400" y="530" width="470" height="80" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-70" parent="1" style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=12;fontColor=#000000;spacingLeft=2;" value="Kredensial DB di /etc/equipment-api.env&lt;br&gt;(chmod 600, tidak masuk Git)" vertex="1">
+          <mxGeometry height="80" width="470" x="1690" y="1388.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n13" value="&lt;b&gt;IAM Instance Profile: LabInstanceProfile&lt;/b&gt;&lt;br&gt;(berisi LabRole) untuk akses Session Manager; tanpa access key di kode" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDECEA;strokeColor=#DD344C;strokeWidth=2;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="375" y="690" width="520" height="90" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-71" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FDECEA;strokeColor=#DD344C;strokeWidth=2;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;" value="&lt;b&gt;IAM Instance Profile: LabInstanceProfile&lt;/b&gt;&lt;br&gt;(berisi LabRole) untuk akses Session Manager; tanpa access key di kode" vertex="1">
+          <mxGeometry height="90" width="520" x="1665" y="1548.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n14" value="&lt;b&gt;Subnet group DB&lt;/b&gt; | subnet di minimal 2 AZ" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#248814;strokeWidth=2;fontColor=#000000;fontSize=13;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;dashed=1;dashPattern=2 4;" vertex="1" parent="1">
-          <mxGeometry x="1075" y="200" width="540" height="620" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#248814;strokeWidth=2;fontColor=#000000;fontSize=13;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;dashed=1;dashPattern=2 4;" value="&lt;b&gt;Subnet group DB&lt;/b&gt; | subnet di minimal 2 AZ" vertex="1">
+          <mxGeometry height="620" width="540" x="2365" y="1058.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n15" value="&lt;b&gt;Security Group sg-db&lt;/b&gt;: MySQL 3306 hanya dari sg-web" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DD344C;strokeWidth=2;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;dashed=1;dashPattern=8 3 2 3;" vertex="1" parent="1">
-          <mxGeometry x="1090" y="245" width="510" height="405" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-73" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DD344C;strokeWidth=2;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;dashed=1;dashPattern=8 3 2 3;" value="&lt;b&gt;Security Group db-sg&lt;/b&gt;: MySQL 3306 hanya dari web-sg" vertex="1">
+          <mxGeometry height="405" width="510" x="2380" y="1103.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n16" value="&lt;b&gt;Amazon RDS for MySQL&lt;/b&gt;&lt;br&gt;db.t3.micro | MySQL 8.0 | gp2 20 GB | Single-AZ&lt;br&gt;Publicly accessible: &lt;b&gt;No&lt;/b&gt;&lt;br&gt;Database: equipmentdb | tabel: equipment" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8EEFB;strokeColor=#3B48CC;strokeWidth=3;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="1115" y="330" width="460" height="270" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-74" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8EEFB;strokeColor=#3B48CC;strokeWidth=3;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;" value="&lt;b&gt;Amazon RDS for MySQL&lt;/b&gt;&lt;br&gt;db.t3.micro | MySQL 8.4 | gp2 20 GB | Single-AZ&lt;br&gt;Publicly accessible: &lt;b&gt;No&lt;/b&gt;&lt;br&gt;Database: equipmentdb | tabel: equipment" vertex="1">
+          <mxGeometry height="270" width="460" x="2405" y="1188.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n17" value="RDS hanya bisa dicapai dari dalam VPC.&lt;br&gt;Tanpa NAT Gateway, Load Balancer, atau Multi-AZ&lt;br&gt;(dibatasi Sandbox dan hemat biaya)." style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=12;fontColor=#000000;spacingLeft=2;" vertex="1" parent="1">
-          <mxGeometry x="1095" y="690" width="500" height="100" as="geometry" />
+        <mxCell id="qCrNGzVFdieBdIfUBidE-75" parent="1" style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=12;fontColor=#000000;spacingLeft=2;" value="RDS hanya bisa dicapai dari dalam VPC.&lt;br&gt;Tanpa NAT Gateway, Load Balancer, atau Multi-AZ&lt;br&gt;(dibatasi Sandbox dan hemat biaya)." vertex="1">
+          <mxGeometry height="100" width="500" x="2385" y="1548.0020289855074" as="geometry" />
         </mxCell>
-        <mxCell id="n18" value="&lt;b&gt;Keterangan&lt;/b&gt;&lt;br&gt;Garis solid: request&lt;br&gt;Putus-putus: respons / izin&lt;br&gt;A, B: jalur administrasi&lt;br&gt;dan pengambilan kode" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=12;fontColor=#000000;spacingLeft=2;" vertex="1" parent="1">
-          <mxGeometry x="30" y="700" width="215" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="n19" value="Farand Hafiz (24/540618/TK/60027) | Cloud Computing AWS | Week 12: Design &amp;amp; AWS Setup" style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=13;fontColor=#000000;spacingLeft=2;" vertex="1" parent="1">
-          <mxGeometry x="0" y="900" width="1700" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="n20" value="A. SSH :22" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1">
+        <mxCell id="qCrNGzVFdieBdIfUBidE-78" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" value="A. SSH :22">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="200" y="325" as="sourcePoint" />
-            <mxPoint x="375" y="325" as="targetPoint" />
+            <mxPoint x="1490" y="1183.0020289855074" as="sourcePoint" />
+            <mxPoint x="1665" y="1183.0020289855074" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="n21" value="1. HTTP :8000" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1">
+        <mxCell id="qCrNGzVFdieBdIfUBidE-79" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" value="1. HTTP :8000">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="200" y="355" as="sourcePoint" />
-            <mxPoint x="375" y="355" as="targetPoint" />
+            <mxPoint x="1490" y="1213.0020289855074" as="sourcePoint" />
+            <mxPoint x="1665" y="1213.0020289855074" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="n22" value="3. Respons JSON" style="endArrow=block;endFill=1;html=1;strokeWidth=2;dashed=1;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1">
+        <mxCell id="qCrNGzVFdieBdIfUBidE-80" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeWidth=2;dashed=1;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" value="3. Respons JSON">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="375" y="395" as="sourcePoint" />
-            <mxPoint x="200" y="395" as="targetPoint" />
+            <mxPoint x="1665" y="1253.0020289855074" as="sourcePoint" />
+            <mxPoint x="1490" y="1253.0020289855074" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="n23" value="B. git clone (HTTPS :443)" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1">
+        <mxCell id="qCrNGzVFdieBdIfUBidE-81" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" value="B. git clone (HTTPS :443)">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="200" y="595" as="sourcePoint" />
-            <mxPoint x="375" y="595" as="targetPoint" />
+            <mxPoint x="1490" y="1453.0020289855074" as="sourcePoint" />
+            <mxPoint x="1665" y="1453.0020289855074" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="n24" value="2. SQL :3306" style="endArrow=block;endFill=1;startArrow=block;startFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1">
+        <mxCell id="qCrNGzVFdieBdIfUBidE-82" edge="1" parent="1" style="endArrow=block;endFill=1;startArrow=block;startFill=1;html=1;strokeWidth=2;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" value="2. SQL :3306">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="870" y="450" as="sourcePoint" />
-            <mxPoint x="1115" y="450" as="targetPoint" />
+            <mxPoint x="2160" y="1308.0020289855074" as="sourcePoint" />
+            <mxPoint x="2405" y="1308.0020289855074" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="n25" value="attach" style="endArrow=block;endFill=1;html=1;strokeWidth=2;dashed=1;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1">
+        <mxCell id="qCrNGzVFdieBdIfUBidE-83" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeWidth=2;dashed=1;strokeColor=#000000;fontSize=12;fontColor=#000000;labelBackgroundColor=#FFFFFF;" value="attach">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="635" y="690" as="sourcePoint" />
-            <mxPoint x="635" y="620" as="targetPoint" />
+            <mxPoint x="1925" y="1548.0020289855074" as="sourcePoint" />
+            <mxPoint x="1925" y="1478.0020289855074" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>

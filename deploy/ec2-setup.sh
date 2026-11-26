@@ -30,7 +30,7 @@ python3 -m venv "$APP_DIR/venv"
 echo "[4/6] Uji koneksi ke RDS, buat database dan tabel"
 export MYSQL_PWD="$DB_PASSWORD"
 if ! mysql -h "$DB_HOST" -u "$DB_USER" -e "CREATE DATABASE IF NOT EXISTS \`$DB_NAME\`; SELECT VERSION() AS mysql_version;"; then
-  echo "GAGAL konek ke RDS. Cek: status RDS Available, sg-db mengizinkan 3306 dari sg-web, password benar." >&2
+  echo "GAGAL konek ke RDS. Cek: status RDS Available, db-sg mengizinkan 3306 dari web-sg, password benar." >&2
   exit 1
 fi
 mysql -h "$DB_HOST" -u "$DB_USER" "$DB_NAME" < "$APP_DIR/src/schema.sql"
