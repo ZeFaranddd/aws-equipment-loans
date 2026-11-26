@@ -8,9 +8,9 @@ Sistem peminjaman peralatan (Equipment Loans): mencatat peralatan dan status pem
 
 ## Track
 
-**Track B: Containers (EC2 + Docker + ECR)**
+**Track A: Cloud VM (EC2 + RDS MySQL)**, dijalankan di AWS Academy Cloud Foundations Sandbox (region us-east-1).
 
-Catatan: rencana awal Track C (Serverless), dialihkan ke Track B karena pembuatan tabel DynamoDB (`dynamodb:CreateTable`) ditolak oleh kebijakan IAM akun AWS Learner Lab.
+Catatan perubahan track: awalnya Track C (Serverless), lalu Track B (Containers). Keduanya dilepas karena layanan yang dibutuhkan (DynamoDB, API Gateway, ECR) tidak ada di daftar layanan Sandbox, sedangkan EC2 dan RDS MySQL tersedia.
 
 ## Arsitektur
 
@@ -18,50 +18,51 @@ Catatan: rencana awal Track C (Serverless), dialihkan ke Track B karena pembuata
 
 File sumber diagram: `docs/architecture.drawio`. Design brief: `docs/design-brief.pdf`.
 
-| Service | Image | Port | Status Week 12 |
-| ------- | ----- | ---- | -------------- |
-| api | `equipment-api` (dibuild dari `src/Dockerfile`) | 8000 | Dibuild, di-push ke ECR, diuji |
-| db | `mysql:8` | 3306 (internal) | Direncanakan di `docker-compose.yml` |
+| Komponen | Spesifikasi | Fungsi |
+| -------- | ----------- | ------ |
+| EC2 `equipment-api-vm` | t3.micro, Amazon Linux 2023, EBS gp2 8 GB | Menjalankan API Flask + gunicorn (port 8000) sebagai service systemd |
+| RDS `equipment-db` | MySQL 8.0, db.t3.micro, gp2 20 GB, Single-AZ, tidak publik | Menyimpan tabel `equipment` |
+| Security Group `sg-web` | SSH 22 (IP saya), TCP 8000 (uji) | Melindungi EC2 |
+| Security Group `sg-db` | MySQL 3306 hanya dari `sg-web` | Melindungi RDS |
+| IAM `LabInstanceProfile` | berisi LabRole | Akses Session Manager; tanpa access key di kode |
 
 ## Entitas
 
-`Equipment`: `id`, `name`, `category`, `status` (available/borrowed), `borrower`, `created_at`.
+`Equipment`: `id` (UUID), `name`, `category`, `status` (`available` / `borrowed`), `borrower`, `created_at`.
 
 ## Endpoint
 
-| Method | Path            | Deskripsi            |
-| ------ | --------------- | -------------------- |
-| POST   | /equipment      | Create               |
-| GET    | /equipment/{id} | Read                 |
-| PUT    | /equipment/{id} | Update               |
-| DELETE | /equipment/{id} | Delete               |
-| GET    | /equipment      | List (tambahan)      |
-| GET    | /health         | Cek status (tambahan)|
+| Method | Path            | Deskripsi             |
+| ------ | --------------- | --------------------- |
+| POST   | /equipment      | Create                |
+| GET    | /equipment/{id} | Read                  |
+| PUT    | /equipment/{id} | Update                |
+| DELETE | /equipment/{id} | Delete                |
+| GET    | /equipment      | List (tambahan)       |
+| GET    | /health         | Cek API dan koneksi DB (tambahan) |
 
-## Menjalankan secara lokal (opsional)
+## Konfigurasi
 
-```bash
-cd src
-docker build -t equipment-api .
-docker run -d -p 8000:8000 --name api equipment-api
-curl http://localhost:8000/health
-```
+Aplikasi membaca `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` dari environment variable (contoh: `src/.env.example`). Kredensial tidak pernah masuk Git.
 
 ## Cara deploy ke AWS
 
-Lihat [deploy/DEPLOYMENT.md](deploy/DEPLOYMENT.md).
+Lihat [deploy/DEPLOYMENT.md](deploy/DEPLOYMENT.md). Ringkasnya: buat `sg-web` dan `sg-db`, RDS MySQL, EC2, lalu di EC2 (setelah `git clone` ke `/opt/equipment-api`) jalankan:
+
+```bash
+DB_HOST=<endpoint-rds> DB_PASSWORD='<password>' bash deploy/ec2-setup.sh
+bash scripts/test-crud.sh
+```
+
+Sandbox menghapus semua resource di akhir sesi, jadi deployment harus bisa diulang dari awal lewat dokumen dan skrip ini.
 
 ## Struktur repo
 
 ```
 README.md
-docker-compose.yml        # rencana dua service (api + db)
-src/                      # app.py, requirements.txt, Dockerfile
-deploy/DEPLOYMENT.md      # rencana dan langkah deployment
-docs/                     # diagram, design brief, bukti AWS
-docs/evidence/            # screenshot dan output uji
+src/                   # app.py, requirements.txt, schema.sql, .env.example
+deploy/                # DEPLOYMENT.md, ec2-setup.sh, equipment-api.service
+scripts/test-crud.sh   # uji health + CRUD
+docs/                  # architecture.drawio/.png, design-brief.pdf
+docs/evidence/         # screenshot dan output uji AWS
 ```
-
-## Bukti AWS
-
-Lihat folder `docs/evidence/`.
